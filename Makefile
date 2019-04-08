@@ -24,6 +24,18 @@ test-integration: .bin-image
 test-all: .bin-image
 	docker run -t --rm -e PACKAGER=$(PACKAGER) -e UPDATE_VENDOR=$(UPDATE_VENDOR) -v $(CURDIR):/src --network="host" $(BIN_IMAGE) make test-all ARGS="$(ARGS)"
 
+generate-data:
+	packr clean && packr
+	
+manual-test: generate-data
+	go test -tags unittest `go list ./... | grep -vP '^blockbook/(contrib|tests)'` $(ARGS)
+
+manual-test-integration: generate-data
+	go test -tags integration `go list blockbook/tests/...` $(ARGS)
+
+manual-test-all: generate-data
+	go test -tags 'unittest integration' `go list ./... | grep -v '^blockbook/contrib'` $(ARGS)
+	
 deb-backend-%: .deb-image
 	docker run -t --rm -e PACKAGER=$(PACKAGER) -e UPDATE_VENDOR=$(UPDATE_VENDOR) -v $(CURDIR):/src -v $(CURDIR)/build:/out $(DEB_IMAGE) /build/build-deb.sh backend $* $(ARGS)
 
