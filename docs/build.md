@@ -228,6 +228,11 @@ Install go-dep tool:
 go get github.com/golang/dep/cmd/dep
 ```
 
+Install gobuffalo:
+```
+go get github.com/gobuffalo/packr/...
+```
+
 Get blockbook sources, install dependencies, build:
 
 ```
