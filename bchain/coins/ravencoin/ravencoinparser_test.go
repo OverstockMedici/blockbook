@@ -179,8 +179,8 @@ func Test_PackTx(t *testing.T) {
 			name: "ravencoin-1",
 			args: args{
 				tx:        testTx1,
-				height:    200301,
-				blockTime: 1519053456,
+				height:    657540,
+				blockTime: 1554837703,
 				parser:    NewravencoinParser(GetChainParams("main"), &btc.Configuration{}),
 			},
 			want:    testTxPacked1,
@@ -190,8 +190,8 @@ func Test_PackTx(t *testing.T) {
 			name: "ravencoin-2",
 			args: args{
 				tx:        testTx2,
-				height:    71994,
-				blockTime: 1519050987,
+				height:    657540,
+				blockTime: 1554837703,
 				parser:    NewravencoinParser(GetChainParams("main"), &btc.Configuration{}),
 			},
 			want:    testTxPacked2,
