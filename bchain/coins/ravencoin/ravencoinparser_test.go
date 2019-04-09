@@ -232,7 +232,7 @@ func Test_UnpackTx(t *testing.T) {
 				parser:   NewravencoinParser(GetChainParams("main"), &btc.Configuration{}),
 			},
 			want:    &testTx1,
-			want1:   200301,
+			want1:   657540,
 			wantErr: false,
 		},
 		{
@@ -242,7 +242,7 @@ func Test_UnpackTx(t *testing.T) {
 				parser:   NewravencoinParser(GetChainParams("main"), &btc.Configuration{}),
 			},
 			want:    &testTx2,
-			want1:   71994,
+			want1:   657540,
 			wantErr: false,
 		},
 	}
