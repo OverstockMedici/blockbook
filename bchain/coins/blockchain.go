@@ -83,7 +83,7 @@ func init() {
 	BlockChainFactories["Qtum"] = qtum.NewQtumRPC
 	BlockChainFactories["Qtum Testnet"] = qtum.NewQtumRPC
 	BlockChainFactories["NULS"] = nuls.NewNulsRPC
-	BlockChainFactories["Ravencoin"] = rvn.NewRavencoinRPC
+	BlockChainFactories["Ravencoin"] = ravencoin.NewRavencoinRPC
 }
 
 // GetCoinNameFromConfig gets coin name and coin shortcut from config file
